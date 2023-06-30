@@ -1,0 +1,27 @@
+.title_1,
+.title_2 {
+  font-family: Lato Bold;
+  color: #0d0d0e;
+  line-height: 128%;
+  font-size: 20;
+}
+
+.cat-header-container {
+  padding: 2rem;
+}
+
+::ng-deep .owl-nav .owl-prev {
+  position: absolute;
+  top: 25%;
+  left: 100%;
+  right: 0%;
+  width: 24px;
+}
+
+::ng-deep .owl-nav .owl-next {
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  right: 100%;
+  width: 24px;
+}

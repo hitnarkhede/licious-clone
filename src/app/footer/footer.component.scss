@@ -1,0 +1,54 @@
+.top-small-border {
+  height: 4px;
+  width: 40px;
+  background-color: #d11243;
+  border-radius: 2px;
+}
+
+.middle-heading {
+  font-family: Satoshi-Variable;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 25px;
+  color: #111;
+  padding: 15px 0px;
+}
+
+.bottom-text {
+  font-size: 14px;
+  line-height: 25px;
+  color: #111;
+  font-family: Satoshi-Variable;
+  font-weight: 400;
+}
+
+.footer-row {
+  background-color: #fdf3f6;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.cards {
+  margin: 20px;
+}
+
+.footer-middle-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  gap: 20px;
+  background: #fff;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.logo-line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #eaeaea;
+  right: 0;
+  /* top: -5px; */
+}

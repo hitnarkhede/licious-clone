@@ -3,16 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeCouponComponent } from './components/home-coupon/home-coupon.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { BestsellersComponent } from './components/bestsellers/bestsellers.component';
+import { FreshComponent } from './components/fresh/fresh.component';
+import { CombosComponent } from './components/combos/combos.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HomeCouponComponent,
+    CategoriesComponent,
+    BestsellersComponent,
+    FreshComponent,
+    CombosComponent,
+    FooterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, CarouselModule],
+  exports: [CarouselModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
