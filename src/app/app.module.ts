@@ -12,6 +12,10 @@ import { FreshComponent } from './components/fresh/fresh.component';
 import { CombosComponent } from './components/combos/combos.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FooterComponent } from './footer/footer.component';
+import { LoginSidebarComponent } from './components/login-sidebar/login-sidebar.component';
+
+import { ButtonModule } from 'primeng/button';
+import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
   declarations: [
@@ -23,12 +27,15 @@ import { FooterComponent } from './footer/footer.component';
     FreshComponent,
     CombosComponent,
     FooterComponent,
+    LoginSidebarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CarouselModule,
+    SidebarModule,
+    ButtonModule,
   ],
   exports: [CarouselModule],
   providers: [],

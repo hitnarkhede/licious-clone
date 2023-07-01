@@ -1,5 +1,11 @@
-<div class="nav-header sticky-top" style="background: #fff">
-  <app-header [checkoutData]="cart.checkoutData"></app-header>
+<div class="nav-header sticky-top" style="background: #fff; z-index: 3">
+  <app-header
+    [checkoutData]="cart.checkoutData"
+    [loginData]="loginData"
+  ></app-header>
+</div>
+<div>
+  <app-login-sidebar [loginData]="loginData"></app-login-sidebar>
 </div>
 
 <div class="container" style="max-width: 1200px; overflow: hidden">

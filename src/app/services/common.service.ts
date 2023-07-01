@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class CommonService {
   constructor() {}
 
+  public loginData: any = { isLoginFormOpen: false };
+
   private cart = {
     items: {},
     checkoutData: {
