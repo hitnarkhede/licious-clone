@@ -11,6 +11,7 @@ export class BestsellersComponent implements OnInit {
   @Input() heading: string = '';
   @Input() subHeading: string = '';
   @Input() data: any[] = [];
+  @Input() cart: any;
 
   bestsellers: any[] = [];
   customOptions: OwlOptions = {
@@ -47,7 +48,66 @@ export class BestsellersComponent implements OnInit {
     nav: true,
   };
 
+  // cartItems: any = {};
+
   ngOnInit(): void {
-    this.bestsellers = this.data; //this.commonService.getBestsellers();
+    this.bestsellers = this.data;
+  }
+
+  addToCartHandler(event: any, id: string) {
+    if (Object.keys(this.cart.items).length == 0) {
+      this.cart.items[id] = 1;
+      let element = document.getElementById(id);
+      element?.classList.remove('add-to-cart');
+      element?.classList.add('add-to-cart-extended');
+    } else {
+      if (Object.keys(this.cart.items).includes(id)) {
+        if (this.cart.items[id] === 0) {
+          let element = document.getElementById(id);
+          element?.classList.remove('add-to-cart');
+          element?.classList.add('add-to-cart-extended');
+        }
+        this.cart.items[id] = this.cart.items[id] + 1;
+      } else {
+        this.cart.items[id] = 1;
+        let element = document.getElementById(id);
+        element?.classList.remove('add-to-cart');
+        element?.classList.add('add-to-cart-extended');
+      }
+    }
+
+    let selectedItem = this.data.find((itm) => itm.id == id);
+    if (selectedItem) {
+      this.cart.checkoutData.amount =
+        Number(this.cart.checkoutData.amount) +
+        (selectedItem.discountedPrice
+          ? Number(selectedItem.discountedPrice)
+          : Number(selectedItem.actualPrice));
+      this.cart.checkoutData.quantity++;
+    }
+
+    console.log('CART', this.cart);
+  }
+
+  removeFromCartHandler(event: any, id: string) {
+    this.cart.items[id] = this.cart.items[id] - 1;
+
+    if (this.cart.items[id] === 0) {
+      let element = document.getElementById(id);
+      element?.classList.remove('add-to-cart-extended');
+      element?.classList.add('add-to-cart');
+    }
+
+    let selectedItem = this.data.find((itm) => itm.id == id);
+    if (selectedItem) {
+      this.cart.checkoutData.amount =
+        Number(this.cart.checkoutData.amount) -
+        (selectedItem.discountedPrice
+          ? Number(selectedItem.discountedPrice)
+          : Number(selectedItem.actualPrice));
+      this.cart.checkoutData.quantity--;
+    }
+
+    console.log('CART', this.cart);
   }
 }

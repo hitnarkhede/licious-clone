@@ -137,9 +137,33 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
+.add-to-cart-extended {
+  position: absolute;
+  width: 86px;
+  height: 32px;
+  bottom: -8px;
+  right: -8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  top: 45%;
+
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  justify-content: space-evenly;
+}
+
 .plus-icon {
-  width: 12px;
+  width: 12px !important;
   aspect-ratio: auto 12 / 12;
+  height: 12px;
+}
+
+.minus-icon {
+  width: 12px !important;
+  aspect-ratio: 12 / 12;
   height: 12px;
 }
 
@@ -153,4 +177,8 @@
   cursor: pointer;
   height: 18rem;
   width: 80%;
+}
+
+.hidden {
+  display: none;
 }

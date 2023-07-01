@@ -29,8 +29,9 @@
   display: grid;
   grid-template-columns: max-content max-content max-content;
   align-items: center;
-  gap: 40px;
+  justify-content: space-evenly;
 }
+
 .left-section-itm {
   display: flex;
   align-items: center;
@@ -40,6 +41,33 @@
   cursor: pointer;
   transform: translateY(-2px);
 }
+
+::ng-deep .cart-border {
+  border: 1px #d11243 solid;
+  border-radius: 8px;
+  padding: 9px 20px;
+  height: 50px;
+  transform: translateY(0);
+}
+.cart-not-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
 .nav-search {
   width: 294px;
   opacity: 0.7;
@@ -51,4 +79,10 @@
 
 .nav-section-2 {
   display: flex;
+}
+
+.text_2 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.8px;
 }

@@ -5,15 +5,40 @@
   </div>
   <div class="container">
     <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide *ngFor="let bestseller of bestsellers">
+      <ng-template
+        carouselSlide
+        *ngFor="let bestseller of bestsellers; let i = index"
+      >
         <div class="orl-item card-itm">
           <div>
             <img
               src="../../../assets/bestsellers/{{ bestseller.src }}"
               class="card-icon"
             />
-            <div class="add-to-cart">
-              <img src="../../../assets/icons/Plus.svg" class="plus-icon" />
+            <div class="add-to-cart" id="{{ bestseller.id }}">
+              <img
+                *ngIf="
+                  (cart.items[bestseller.id] != null ||
+                    cart.items[bestseller.id] != undefined) &&
+                  cart.items[bestseller.id] != 0
+                "
+                src="../../../assets/icons/Minus.svg"
+                class="minus-icon"
+                (click)="removeFromCartHandler($event, bestseller.id)"
+              />
+              <label
+                *ngIf="
+                  (cart.items[bestseller.id] != null ||
+                    cart.items[bestseller.id] != undefined) &&
+                  cart.items[bestseller.id] != 0
+                "
+                >{{ cart.items[bestseller.id] }}</label
+              >
+              <img
+                src="../../../assets/icons/Plus.svg"
+                class="plus-icon"
+                (click)="addToCartHandler($event, bestseller.id)"
+              />
             </div>
           </div>
           <div class="card-content-area">

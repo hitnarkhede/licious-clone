@@ -9,6 +9,7 @@ import { CommonService } from './services/common.service';
 export class AppComponent {
   title = 'licious-clone';
 
+  cart: any;
   bestsellersHeading = 'Bestsellers';
   bestsellersSubHeading: string = 'Most popular products near you!';
   bestsellersData: any[] = [];
@@ -35,6 +36,8 @@ export class AppComponent {
 
   constructor(private commonService: CommonService) {}
   ngOnInit() {
+    this.cart = this.commonService.getCart();
+
     this.bestsellersData = this.commonService.getBestsellers();
     this.combosData = this.commonService.getCombos();
     this.lowersData = this.commonService.getLowers();

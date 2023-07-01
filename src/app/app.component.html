@@ -1,5 +1,5 @@
-<div class="nav-header">
-  <app-header></app-header>
+<div class="nav-header sticky-top" style="background: #fff">
+  <app-header [checkoutData]="cart.checkoutData"></app-header>
 </div>
 
 <div class="container" style="max-width: 1200px; overflow: hidden">
@@ -11,6 +11,7 @@
   </div>
   <div class="row">
     <app-bestsellers
+      [cart]="cart"
       [heading]="bestsellersHeading"
       [subHeading]="bestsellersSubHeading"
       [data]="bestsellersData"
@@ -21,6 +22,7 @@
   </div>
   <div class="row">
     <app-bestsellers
+      [cart]="cart"
       [heading]="combosHeading"
       [subHeading]="combosSubHeading"
       [data]="combosData"
@@ -29,6 +31,7 @@
 
   <div class="row">
     <app-bestsellers
+      [cart]="cart"
       [heading]="lowersHeading"
       [subHeading]="lowersSubHeading"
       [data]="lowersData"
@@ -37,6 +40,7 @@
 
   <div class="row">
     <app-bestsellers
+      [cart]="cart"
       [heading]="breakfastHeading"
       [subHeading]="breakfastSubHeading"
       [data]="breakfastData"
@@ -45,6 +49,7 @@
 
   <div class="row">
     <app-bestsellers
+      [cart]="cart"
       [heading]="bonelessHeading"
       [subHeading]="bonelessSubHeading"
       [data]="bonelessData"
@@ -53,6 +58,7 @@
 
   <div class="row">
     <app-bestsellers
+      [cart]="cart"
       [heading]="topRatedHeading"
       [subHeading]="topRatedSubHeading"
       [data]="topRatedData"
@@ -61,6 +67,7 @@
 
   <div class="row">
     <app-bestsellers
+      [cart]="cart"
       [heading]="lowersHeading"
       [subHeading]="lowersSubHeading"
       [data]="lowersData"
@@ -69,6 +76,7 @@
 
   <div class="row">
     <app-bestsellers
+      [cart]="cart"
       [heading]="breakfastHeading"
       [subHeading]="breakfastSubHeading"
       [data]="breakfastData"

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary header-nav">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+  <div class="container-fluid d-flex">
+    <a class="row navbar-brand" href="#">
       <img
         src="../../../assets/licious-logo.svg"
         alt="Logo"
@@ -10,37 +10,32 @@
       />
     </a>
 
-    <div class="nav-section-2">
-      <img
-        src="../../../assets/icons/Other-label.svg"
-        class="align-middle p-e-4"
-        width="16"
-        height="16"
-      />
+    <div class="row nav-section-2">
       <div class="nav-item dropdown location-block">
-        <div class="fw-bolder p-e-2">Pune</div>
-        <div class="fw-normal">Pune, Maharashtra, India</div>
+        <div class="fw-bolder p-e-2">
+          <span
+            ><img
+              src="../../../assets/icons/Other-label.svg"
+              class="align-middle p-e-4"
+              width="16"
+              height="16"
+          /></span>
+          Pune
+          <span class="p-s-4"
+            ><img
+              src="../../../assets/icons/new_chevron.svg"
+              class="align-middle"
+              width="8"
+              height="8"
+          /></span>
+        </div>
+        <div class="fw-normal text_2 m-l-3" style="padding-left: 19px">
+          Pune, Maharashtra, India
+        </div>
       </div>
     </div>
 
-    <!-- <div class="nav-item dropdown">
-      <a
-        class="nav-link dropdown-toggle"
-        href="#"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-        ><b> Pune </b>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div> -->
-
-    <form class="d-flex" role="search">
+    <form class="row d-flex" role="search">
       <input
         class="nav-search"
         type="search"
@@ -48,7 +43,7 @@
       />
     </form>
 
-    <div class="header-left-section">
+    <div class="row header-left-section">
       <div class="left-section-itm">
         <img
           src="../../../assets/icons/categories-grey.svg"
@@ -66,66 +61,46 @@
         /><span>&nbsp;Login</span>
       </div>
 
-      <div class="left-section-itm">
+      <div
+        *ngIf="checkoutData.quantity === 0"
+        class="left-section-itm"
+        (click)="openCart()"
+      >
         <img
           src="../../../assets/icons/cart.svg"
           alt="Cart"
           height="20"
           width="20"
           loading="lazy"
+          class="p-e-2"
         />
         <span>Cart</span>
       </div>
+      <div
+        *ngIf="checkoutData.quantity !== 0"
+        class="left-section-itm"
+        (click)="openCart()"
+      >
+        <div class="cart-border cart-not-empty">
+          <img
+            src="../../../assets/icons/cart-active.svg"
+            alt="Cart"
+            height="20"
+            width="20"
+            loading="lazy"
+          />
+          <div class="">
+            <div class="text_2 black_text">
+              <span
+                ><b>{{ checkoutData.quantity }} items</b></span
+              >
+            </div>
+            <span style="color: #d11243"
+              ><b>₹{{ checkoutData.amount }}</b></span
+            >
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div> -->
   </div>
 </nav>
