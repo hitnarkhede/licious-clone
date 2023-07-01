@@ -1,8 +1,8 @@
-<div>
-  <app-header class="nav-header"></app-header>
+<div class="nav-header">
+  <app-header></app-header>
 </div>
 
-<div class="container" style="max-width: 1080px; overflow: hidden">
+<div class="container" style="max-width: 1200px; overflow: hidden">
   <div class="row p-2">
     <app-home-coupon></app-home-coupon>
   </div>
@@ -10,7 +10,69 @@
     <app-categories></app-categories>
   </div>
   <div class="row">
-    <app-bestsellers></app-bestsellers>
+    <app-bestsellers
+      [heading]="bestsellersHeading"
+      [subHeading]="bestsellersSubHeading"
+      [data]="bestsellersData"
+    ></app-bestsellers>
+  </div>
+  <div class="row">
+    <app-fresh></app-fresh>
+  </div>
+  <div class="row">
+    <app-bestsellers
+      [heading]="combosHeading"
+      [subHeading]="combosSubHeading"
+      [data]="combosData"
+    ></app-bestsellers>
+  </div>
+
+  <div class="row">
+    <app-bestsellers
+      [heading]="lowersHeading"
+      [subHeading]="lowersSubHeading"
+      [data]="lowersData"
+    ></app-bestsellers>
+  </div>
+
+  <div class="row">
+    <app-bestsellers
+      [heading]="breakfastHeading"
+      [subHeading]="breakfastSubHeading"
+      [data]="breakfastData"
+    ></app-bestsellers>
+  </div>
+
+  <div class="row">
+    <app-bestsellers
+      [heading]="bonelessHeading"
+      [subHeading]="bonelessSubHeading"
+      [data]="bonelessData"
+    ></app-bestsellers>
+  </div>
+
+  <div class="row">
+    <app-bestsellers
+      [heading]="topRatedHeading"
+      [subHeading]="topRatedSubHeading"
+      [data]="topRatedData"
+    ></app-bestsellers>
+  </div>
+
+  <div class="row">
+    <app-bestsellers
+      [heading]="lowersHeading"
+      [subHeading]="lowersSubHeading"
+      [data]="lowersData"
+    ></app-bestsellers>
+  </div>
+
+  <div class="row">
+    <app-bestsellers
+      [heading]="breakfastHeading"
+      [subHeading]="breakfastSubHeading"
+      [data]="breakfastData"
+    ></app-bestsellers>
   </div>
 </div>
 <app-footer></app-footer>

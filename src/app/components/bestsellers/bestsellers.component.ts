@@ -1,31 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { CommonService } from 'src/app/services/common.service';
 @Component({
   selector: 'app-bestsellers',
   templateUrl: './bestsellers.component.html',
   styleUrls: ['./bestsellers.component.scss'],
 })
 export class BestsellersComponent implements OnInit {
-  constructor(private commonService: CommonService) {}
+  constructor() {}
+
+  @Input() heading: string = '';
+  @Input() subHeading: string = '';
+  @Input() data: any[] = [];
 
   bestsellers: any[] = [];
   customOptions: OwlOptions = {
     loop: false,
     mouseDrag: true,
     touchDrag: true,
-    stagePadding: 50,
+    stagePadding: 80,
     margin: 15,
     autoWidth: true,
     startPosition: 0,
     pullDrag: true,
     dots: false,
     navSpeed: 200,
-    items: 4,
+    items: 5,
     lazyLoad: false,
     navText: [
-      '<img src="../../../assets/icons/carousel_arrow-l.svg"/>',
-      '<img src="../../../assets/icons/carousel_arrow-r.svg"/>',
+      '<img src="../../../assets/icons/carousel_arrow-l.svg" class="carousel-prev-btn" />',
+      '<img src="../../../assets/icons/carousel_arrow-r.svg" class="carousel-next-btn" />',
     ],
     responsive: {
       0: {
@@ -38,13 +41,13 @@ export class BestsellersComponent implements OnInit {
         items: 4,
       },
       940: {
-        items: 4,
+        items: 5,
       },
     },
     nav: true,
   };
 
   ngOnInit(): void {
-    this.bestsellers = this.commonService.getBestsellers();
+    this.bestsellers = this.data; //this.commonService.getBestsellers();
   }
 }
