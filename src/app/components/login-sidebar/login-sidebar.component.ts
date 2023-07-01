@@ -17,4 +17,13 @@ export class LoginSidebarComponent {
     if (e.target.value.length == 10) this.isLoginBtnDisabled = false;
     else this.isLoginBtnDisabled = true;
   }
+
+  onSidebarClose() {
+    let elements: HTMLCollection =
+      document.getElementsByClassName('p-sidebar-mask');
+    for (let i = 0; i < elements.length; i++) {
+      elements[i]?.classList.add('p-sidebar-mask-hidden');
+      elements[i]?.classList.remove('p-sidebar-mask');
+    }
+  }
 }

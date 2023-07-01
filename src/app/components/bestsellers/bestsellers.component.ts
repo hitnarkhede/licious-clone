@@ -85,8 +85,6 @@ export class BestsellersComponent implements OnInit {
           : Number(selectedItem.actualPrice));
       this.cart.checkoutData.quantity++;
     }
-
-    console.log('CART', this.cart);
   }
 
   removeFromCartHandler(event: any, id: string) {
@@ -107,7 +105,5 @@ export class BestsellersComponent implements OnInit {
           : Number(selectedItem.actualPrice));
       this.cart.checkoutData.quantity--;
     }
-
-    console.log('CART', this.cart);
   }
 }

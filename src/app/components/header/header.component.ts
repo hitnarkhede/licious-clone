@@ -12,11 +12,12 @@ export class HeaderComponent implements OnInit {
   cartEmpty: boolean = false;
   ngOnInit(): void {}
 
-  openCart() {
-    console.log('Cart');
-  }
+  openCart() {}
   openLoginForm() {
     this.loginData.isLoginFormOpen = true;
-    console.log('Cart');
+    let elements = document.getElementsByClassName('p-sidebar-mask-hidden');
+    for (let i = 0; i < elements.length; i++) {
+      elements[i]?.classList.add('p-sidebar-mask');
+    }
   }
 }

@@ -6,9 +6,14 @@
   [modal]="true"
   [blockScroll]="true"
   [baseZIndex]="5"
+  [dismissible]="false"
 >
-  <ng-template pTemplate="closeicon">
-    <img src="../../../assets/icons/cross-white.svg" class="siderbar-close" />
+  <ng-template pTemplate="closeicon" (click)="onSidebarClose()">
+    <img
+      src="../../../assets/icons/cross-white.svg"
+      class="siderbar-close"
+      (click)="onSidebarClose()"
+    />
   </ng-template>
 
   <div class="login-wrapper">
